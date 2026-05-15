@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cheryl Fischer | Administrative & Operations Support</title>
+  <style>
+    :root {
+      --blue: #5b9bd5;
+      --blue-dark: #2f6fa7;
+      --text: #1f2933;
+      --muted: #5f6b7a;
+      --bg: #f7f9fc;
+      --card: #ffffff;
+      --border: #d9e2ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--blue-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #102a43;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ffffff 0%, #eef5fc 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 16px;
+      color: #102a43;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 0 28px;
+      color: var(--muted);
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      border: 1px solid var(--blue-dark);
+    }
+
+    .button.primary {
+      background: var(--blue-dark);
+      color: white;
+    }
+
+    .button.secondary {
+      background: white;
+      color: var(--blue-dark);
+    }
+
+    .contact-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(16, 42, 67, 0.08);
+    }
+
+    .hero-card h2 {
+      margin-top: 0;
+      color: var(--blue-dark);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    section {
+      margin-bottom: 54px;
+    }
+
+    h2.section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--blue);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .skill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-weight: 600;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 6px 18px rgba(16, 42, 67, 0.04);
+    }
+
+    .date {
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .role {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+      color: #102a43;
+    }
+
+    .company {
+      margin: 2px 0 14px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .education-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    @media (max-width: 800px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 48px 24px;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">Cheryl Fischer</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="hero-inner">
+      <div>
+        <h1>Administrative & Operations Support Professional</h1>
+        <p>
+          Administrative and operations support professional with experience in office operations,
+          cross-functional coordination, scheduling, and organizational support within fast-paced
+          hospitality and higher education environments. Recognized for leadership, communication,
+          and operational reliability.
+        </p>
+
+        <div class="button-row">
+          <a class="button primary" href="resume.pdf">View Resume</a>
+          <a class="button secondary" href="mailto:cheryl11953@gmail.com">Contact Me</a>
+        </div>
+
+        <div class="contact-line">
+          <span>New Paltz, NY</span>
+          <span>cheryl11953@gmail.com</span>
+          <span><a href="https://www.linkedin.com/in/cheryl-fischer1/" target="_blank">linkedin.com/in/cheryl-fischer1/</a></span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2>Professional Focus</h2>
+        <p>
+          Focused on operations coordination, administrative support, office organization,
+          scheduling, communication, documentation, and creating smoother day-to-day workflows
+          for teams, guests, students, and staff.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">Administrative Support</div>
+        <div class="skill">Operations Coordination</div>
+        <div class="skill">Office Administration</div>
+        <div class="skill">Scheduling</div>
+        <div class="skill">Microsoft Office Suite</div>
+        <div class="skill">Google Workspace</div>
+        <div class="skill">Communication</div>
+        <div class="skill">Organization</div>
+        <div class="skill">Data Entry</div>
+        <div class="skill">Cross-Functional Collaboration</div>
+        <div class="skill">Policy Enforcement</div>
+        <div class="skill">Documentation</div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="experience-grid">
+        <article class="card">
+          <div class="date">2022 – 2024</div>
+          <h3 class="role">Front Desk Associate</h3>
+          <div class="company">Glen Falls House · Round Top, NY</div>
+          <ul>
+            <li>Served as a key operational resource within a high-volume resort environment, supporting front desk operations, guest relations, reservations, event coordination, and cross-department communication.</li>
+            <li>Developed centralized operational documentation and streamlined workflows between departments, improving communication and day-to-day operational efficiency across the property.</li>
+            <li>Optimized reservation and front desk workflows within the ResKey system while supporting high-volume guest coordination and daily operations.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="date">2018 – 2019</div>
+          <h3 class="role">Night Host</h3>
+          <div class="company">SUNY New Paltz · New Paltz, NY</div>
+          <ul>
+            <li>Oversaw overnight front desk operations for residence halls, serving as the primary point of contact for residents during late-night shifts.</li>
+            <li>Monitored building access, conducted regular patrols, and enforced quiet hour and safety policies to support a safe and respectful living environment.</li>
+            <li>Strengthened skills in conflict resolution, policy enforcement, situational awareness, and independent operational responsibility in a high-trust environment.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="date">2017 – 2018</div>
+          <h3 class="role">Student Center Employee</h3>
+          <div class="company">Suffolk County Community College · Selden, NY</div>
+          <ul>
+            <li>Recognized with the Mary O’Malley Student of the Year Award across three campuses for leadership, initiative, and contributions to student life and campus operations.</li>
+            <li>Served as a trusted student leader within the Babylon Student Center, supporting front desk operations, student services, administrative coordination, incident reporting, and daily facility oversight.</li>
+            <li>Collaborated directly with senior administration, including the Vice President of the college, to advocate for campus safety improvements and student wellbeing initiatives.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="date">2019</div>
+          <h3 class="role">Cashier</h3>
+          <div class="company">Zoom Flume Water Park · East Durham, NY</div>
+          <ul>
+            <li>Supported daily operations in a high-traffic gift shop environment, including customer service, sales, merchandising, and product presentation.</li>
+            <li>Maintained inventory organization, assisted customers with purchases and questions, and supported loss prevention awareness during busy periods.</li>
+            <li>Managed customer season pass photography and printing, requiring attention to detail, multitasking, and efficient service delivery.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="date">2016</div>
+          <h3 class="role">Catering Assistant</h3>
+          <div class="company">Country Fair Park · Medford, NY</div>
+          <ul>
+            <li>Supported catering operations, restaurant service, and event execution for corporate events, private parties, and large seasonal gatherings.</li>
+            <li>Floated between food service, event setup, guest support, and daily operations depending on business needs.</li>
+            <li>Took on leadership responsibilities within the ice cream stand and became known for adaptability, reliability, and support during high-pressure events.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2 class="section-title">Education</h2>
+      <div class="education-card">
+        <div class="date">2018 – 2020</div>
+        <h3 class="role">SUNY New Paltz</h3>
+        <div class="company">B.A. in Psychology, Cum Laude · New Paltz, NY</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card">
+        <p>
+          Open to opportunities in operations coordination, office administration,
+          HR support, administrative support, and general office roles.
+        </p>
+        <p>
+          <strong>Email:</strong> <a href="mailto:cheryl11953@gmail.com">cheryl11953@gmail.com</a><br />
+          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/cheryl-fischer1/" target="_blank">linkedin.com/in/cheryl-fischer1/</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Cheryl Fischer
+  </footer>
+</body>
+</html>
